@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>ASl Recognition</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="cropperjs/dist/cropper.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div id="main">
+    <h1>ASL Recognition</h1>
+    <h2>Experience the beauty of ASL anticipation through our innovative recognition technology</h2>
+</div>
+
+<div class="container" >
+
+    <div style="text-align: center">
+        <br><br>
+        <p style="font-size: 3vh; font:Dosis;">Capture symbol, reveal letter's essence through our stunning photo-based recognition technology.</p>
+
+        <br><br>
+
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <label style="font-size: 3vh; font:Dosis; color: #07182E;">&emsp;&emsp;&emsp;CamVision</label>
+            <div id="camera"></div>
+            <br><br>
+            <button class="btn btn-primary" onclick="take_snapshot()">Capture Image</button>&emsp;
+        </div>
+
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <label style="font-size: 3vh; font:Dosis; color: #07182E;">&emsp;&emsp;Prediction</label>
+            <p class="gesture_name" id="result_gesture_name"></p>
+            <p class="emoji" id="result_emoji"></p>
+        </div>
+
+        <div id="snap-container" class="col-md-4 col-sm-12 col-xs-12">
+            <div id="output-container">
+                <label style="font-size: 3vh; font:Dosis; color: #07182E;">&emsp;&emsp;Snapshot</label>
+                <div id="result"></div>
+                <br><br>
+                <button class="btn btn-primary" id="cropImageBtn">Crop Image</button>
+                <button class="btn btn-primary hidden" id="saveImageBtn">Save Image</button>
+                <button class="btn btn-success" id="predictBtn" onclick="check()">Predict Gesture</button>
+            </div>
+            <br><br>
+            <p id="quote" style="color: red; font-size: 30px;"></p>
+            
+            <div id="crop-container" class="hidden col-md-4 col-sm-12 col-xs-12">
+                <label>​</label>
+                <div id="b_crop">
+                    <img src="" id="image">
+                </div>
+                <br><br>
+            </div>
+    </div>
+    <p p style="font-size: 2.5vh; font:Dosis;"><strong>Instructions : </strong>Enhance your image captures with a <u>light background</u> </p>
+    </div>
+</div>
+<br><br>
+<br><br>
+<div id="copyright">
+    &copy; 2023 ASl Recognition. All Rights Reserved.
+</div>
+
+
+<script src="cropperjs/dist/cropper.min.js"></script>
+<script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+<script>
+    VANTA.BIRDS({
+    el: "#main",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color1: 0x0,
+    color2: 0xffed,
+    birdSize: 1.60,
+    wingSpan: 33.00,
+    separation: 33.00,
+    cohesion: 26.00
+    })
+</script>
+
+</body>
+</html>
