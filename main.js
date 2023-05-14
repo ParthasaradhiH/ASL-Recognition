@@ -30,7 +30,7 @@ document.getElementById('cropImageBtn').addEventListener('click', function() {
   document.getElementById('predictBtn').classList.toggle('hidden');
 
   cropper = new Cropper(image, {
-  aspectRatio: 400/300.5,
+//   aspectRatio: 400/300.5,
   viewMode: 0,
   });
 
